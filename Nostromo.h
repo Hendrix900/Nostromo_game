@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/25 12:15:50 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/25 23:58:47 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>
-#include <stdarg.h> 
+#include <stdarg.h>
+#include <fcntl.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
 
@@ -33,7 +34,7 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 //Ruta de la música
-#define MUS_PATH "./Nostromo.wav"
+#define MUS_PATH "./bsoalien.wav"
 
 typedef struct		s_list_printf
 {
@@ -54,9 +55,13 @@ void Room_0();
 void Room_1();
 void *music();
 void text_slow(char *str);
+void text_slow1(char *str);
 int		verb(char *str);
 void        random_room();
 void	deploy_room();
+int	open_text();
+void ft_putchar(char c);
+
 
 
 

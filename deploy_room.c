@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 02:31:31 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/25 12:50:03 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/25 14:26:37 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* Función que copia un array bidimensional, rellena el de origen a 0 y luego transfiere el 1 (jugador) para saber la localización
 en base al desplazamiento */
 
-void	throug_array()
+void		throug_array()
 {
   int        x;
   int        y;
@@ -56,7 +56,12 @@ void	throug_array()
               while (y < 3)
             {
                 if (map_copy[x][y] == 1)
-                      next->map[x - 1][y] = 1;
+				{
+                    next->map[x - 1][y] = 1;
+						//if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[0][0] || map_copy[x][y] == map_copy[0][2])				
+						
+				}
+
                       
               y++;
             }
@@ -76,6 +81,13 @@ void	throug_array()
             {
                 if (map_copy[x][y] == 1)
                       next->map[x + 1][y] = 1;
+					  	if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[4][0] || map_copy[x][y] == map_copy[4][2])
+						{
+							x = 5;
+							y = 3;
+							printf ("No hay camino");
+							break;
+						}
               y++;
             }
         
@@ -94,6 +106,13 @@ void	throug_array()
             {
                 if (map_copy[x][y] == 1)
                       next->map[x][y + 1] = 1;
+					  		if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[0][2] || map_copy[x][y] == map_copy[4][2])
+						{
+							x = 5;
+							y = 3;
+							printf ("No hay camino");
+							break;
+						}
               y++;
             }
         
@@ -112,6 +131,13 @@ void	throug_array()
             {
                 if (map_copy[x][y] == 1)
                       next->map[x][y - 1] = 1;
+					  		if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[0][0] || map_copy[x][y] == map_copy[4][0])
+						{
+							x = 5;
+							y = 3;
+							printf ("No hay camino");
+							break;
+						}
               y++;
             }
         
@@ -123,8 +149,7 @@ void	throug_array()
 
 void	deploy_room()
 {
-	printf("%d\n", next->matrix[3][1]);
-  throug_array();
+
  /*--------------------Room [0][1]--------------------------------*/
 	if	(next->matrix[0][1] == 1 && next->map[0][1] == 1)
 		printf("Room1\n");

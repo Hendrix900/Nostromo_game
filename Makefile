@@ -6,16 +6,16 @@
 #    By: carlos <carlos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/24 03:56:22 by ccastill          #+#    #+#              #
-#    Updated: 2020/05/25 11:45:38 by carlos           ###   ########.fr        #
+#    Updated: 2020/05/25 23:54:28 by carlos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = Nostromo.a
 
-FUN_PRINTF = Nostromo.c Room_0.c Room_1.c text_slow.c music.c verb.c deploy_room.c random_room.c\
+FUN_PRINTF = Nostromo.c Room_0.c Room_1.c text_slow.c  text_slow1.c music.c verb.c deploy_room.c random_room.c open_text.c\
 
-OBJS_PRINTF = Nostromo.o Room_0.o Room_1.o text_slow.o music.o verb.o deploy_room.o random_room.o\
+OBJS_PRINTF = Nostromo.o Room_0.o Room_1.o text_slow.o text_slow1.o music.o verb.o deploy_room.o random_room.o open_text.o\
 
 WAV_FILES = Nostromo.wav
 
