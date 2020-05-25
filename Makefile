@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ccastill <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: carlos <carlos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/24 03:56:22 by ccastill          #+#    #+#              #
-#    Updated: 2020/05/24 05:52:27 by ccastill         ###   ########.fr        #
+#    Updated: 2020/05/25 11:45:38 by carlos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = Nostromo.a
 
-FUN_PRINTF = Nostromo.c Room_0.c Room_1.c text_slow.c music.c compare.c \
+FUN_PRINTF = Nostromo.c Room_0.c Room_1.c text_slow.c music.c verb.c deploy_room.c random_room.c\
 
-OBJS_PRINTF = Nostromo.o Room_0.o Room_1.o text_slow.o music.o compare.o \
+OBJS_PRINTF = Nostromo.o Room_0.o Room_1.o text_slow.o music.o verb.o deploy_room.o random_room.o\
 
 WAV_FILES = Nostromo.wav
 

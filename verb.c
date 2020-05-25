@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 05:10:07 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/25 11:17:50 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/25 12:42:49 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,44 +41,45 @@ int        compare_verb(char *str, char *word)
   return (0);
 }
 
-void		verb(char *str) // CAmbiado de int a void
+int		verb(char *str) // CAmbiado de int a void
 {
 	/*--------Verbos-----*/
- 	if (compare_verb(str, "norte") == 1)
+ 	if (compare_verb(str, "norte\n") == 1)
 	 	(next->verb = 'n');
-	else if (compare_verb(str,"sur") == 1)
+	else if (compare_verb(str,"sur\n") == 1)
 	 	next->verb = 's';
-	else if (compare_verb(str,"derecha") == 1)
+	else if (compare_verb(str,"derecha\n") == 1)
 	 	next->verb = 'e';	 
-    else if (compare_verb(str,"izquierda") == 1)
+    else if (compare_verb(str,"izquierda\n") == 1)
 	 	next->verb = 'o';      
-	else if (compare_verb(str,"abrir") == 1)
+	else if (compare_verb(str,"abrir\n") == 1)
 	 	next->verb = 'a';
-	else if (compare_verb(str,"cerrar") == 1)
+	else if (compare_verb(str,"cerrar\n") == 1)
 	 	next->verb = 'c';
-	else if (compare_verb(str,"empujar") == 1)
+	else if (compare_verb(str,"empujar\n") == 1)
 	 	next->verb = 'p';
-	else if (compare_verb(str,"tirar") == 1)
+	else if (compare_verb(str,"tirar\n") == 1)
 	 	next->verb = 't';
-	else if (compare_verb(str,"coger") == 1)
+	else if (compare_verb(str,"coger\n") == 1)
 	 	next->verb = 'g';
-	else if (compare_verb(str,"usar") == 1)
+	else if (compare_verb(str,"usar\n") == 1)
 	 	next->verb = 'u';
-	else if (compare_verb(str,"mirar") == 1)
+	else if (compare_verb(str,"mirar\n") == 1)
 	 	next->verb = 'm';
-	else if (compare_verb(str,"encender") == 1)
+	else if (compare_verb(str,"encender\n") == 1)
 	 	next->verb = 'r';
-	else if (compare_verb(str,"apagar") == 1)
+	else if (compare_verb(str,"apagar\n") == 1)
 	 	next->verb = 'p';
-	else if (compare_verb(str,"disparar") == 1)
+	else if (compare_verb(str,"disparar\n") == 1)
 	 	next->verb = 'd';
-	else if (compare_verb(str,"leer") == 1)
+	else if (compare_verb(str,"leer\n") == 1)
 	 	next->verb = 'l';
 	else 
 		next->verb = 0;
+	return (0);
 		
 }
-
+/*
 int main() //quitar
 {
 	if (!(next = malloc(sizeof(t_list))))
@@ -89,17 +90,11 @@ int main() //quitar
 	
 	l = 0;
     number = 0;
-    char *str = "norte";
+    char *str = "sur";
 
 	verb(str);
 	printf("%d\n",next->verb);
 	printf("%d\n",number);
-
-	next->map[1][1] = 1;
-	random_room();
-	deploy_room();
-	
-	printf("El número aleatorio de la matrix es : %d\n", next->matrix[0][1]);
-	printf("La posición del jugador es: %d\n",next->map[1][0]);
     return (0);
 }
+*/

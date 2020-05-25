@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   random_room.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 02:11:57 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/25 02:59:30 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/25 12:49:05 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void        random_room()
 	next->matrix[1][1] = next->random_room_generator[2];
 	next->matrix[1][2] = next->random_room_generator[3];
 	next->matrix[2][0] = next->random_room_generator[4];
+	next->matrix[2][1] = 0;
 	next->matrix[2][2] = next->random_room_generator[5];
 	next->matrix[3][0] = next->random_room_generator[6];
 	next->matrix[3][1] = next->random_room_generator[7];

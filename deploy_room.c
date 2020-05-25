@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 02:31:31 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/25 11:19:17 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/25 12:50:03 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ void	throug_array()
 
 void	deploy_room()
 {
+	printf("%d\n", next->matrix[3][1]);
   throug_array();
  /*--------------------Room [0][1]--------------------------------*/
 	if	(next->matrix[0][1] == 1 && next->map[0][1] == 1)
@@ -220,24 +221,8 @@ void	deploy_room()
 	else if	(next->matrix[2][0] == 9 && next->map[2][0] == 1)
 		printf("Room9\n");
   /*--------------------Room [2][1]--------------------------------*/
-	if	(next->matrix[2][1] == 1 && next->map[2][1] == 1)
-		printf("Room1\n");
-	else if	(next->matrix[2][1] == 2 && next->map[2][1] == 1)
-		printf("Room2\n");
-	else if	(next->matrix[2][1] == 3 && next->map[2][1] == 1)
-		printf("Room3\n");
-	else if	(next->matrix[2][1] == 4 && next->map[2][1] == 1)
-		printf("Room4\n");
-	else if	(next->matrix[2][1] == 5 && next->map[2][1] == 1)
-		printf("Room5\n");
-	else if	(next->matrix[2][1] == 6 && next->map[2][1] == 1)
-		printf("Room6\n");
-	else if	(next->matrix[2][1] == 7 && next->map[2][1] == 1)
-		printf("Room7\n");
-	else if	(next->matrix[2][1] == 8 && next->map[2][1] == 1)
-		printf("Room8\n");
-	else if	(next->matrix[2][1] == 9 && next->map[2][1] == 1)
-		printf("Room9\n");
+	if	(next->matrix[2][1] == 0 && next->map[2][1] == 1)
+		printf("Room0\n");
   /*--------------------Room [2][2]--------------------------------*/
 	if	(next->matrix[2][2] == 1 && next->map[2][2] == 1)
 		printf("Room1\n");
@@ -354,7 +339,7 @@ void	deploy_room()
 		printf("Room9\n");
 }
 
-int main ()
+/*int main ()
 {
 	int l;
 
@@ -371,3 +356,4 @@ int main ()
 	printf("La posición del jugador es: %d\n",next->map[1][0]);
 
 }
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Nostromo.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/25 05:36:17 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/25 12:15:50 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct		s_list_printf
 	int		        random_room_generator[10]; //Cadena donde se almacenan números aleatorios
 	int				matrix[5][3]; // Cadena que alberga los números aleatoriso almacenados por habitaciones.
 	int				map[5][3]; // Indicará la posición del jugador en cada momento.
+	char			str[TAM_MAX];
 }					t_list;
 
 t_list *next;
@@ -53,8 +54,10 @@ void Room_0();
 void Room_1();
 void *music();
 void text_slow(char *str);
-void		verb(char *str);
+int		verb(char *str);
 void        random_room();
+void	deploy_room();
+
 
 
 static char    *texto = "Despiertas en una habitación destartalada\nHay un ordenador encendido y varias habitaciones colindantes\n";
