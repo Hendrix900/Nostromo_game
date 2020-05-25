@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/25 03:19:44 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/25 05:36:17 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ typedef struct		s_list_printf
 {
 	int				verb; // verbo
 	int				object; // Objeto
-	int		        random_room_generator[10]; //Cadena aleatoria
-	int				matrix[5][3];
-	int				map[5][3];
+	int		        random_room_generator[10]; //Cadena donde se almacenan números aleatorios
+	int				matrix[5][3]; // Cadena que alberga los números aleatoriso almacenados por habitaciones.
+	int				map[5][3]; // Indicará la posición del jugador en cada momento.
 }					t_list;
 
 t_list *next;
