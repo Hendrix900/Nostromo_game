@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verb.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 05:10:07 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/24 08:11:38 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/25 11:17:50 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,21 @@ int main() //quitar
 		return (0);
 
     int number;
-
+	int l;
+	
+	l = 0;
     number = 0;
-    char *str = "leer";
+    char *str = "norte";
 
-	//number = compare(str,"oeste");
 	verb(str);
 	printf("%d\n",next->verb);
 	printf("%d\n",number);
 
+	next->map[1][1] = 1;
+	random_room();
+	deploy_room();
+	
+	printf("El número aleatorio de la matrix es : %d\n", next->matrix[0][1]);
+	printf("La posición del jugador es: %d\n",next->map[1][0]);
     return (0);
 }
