@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:20 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/26 00:07:29 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/27 05:32:07 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
     if (!(next = malloc(sizeof(t_list))))
 		return (0);
     music();
-    open_text(); // Título
+  //  open_text(); // Título
     printf("\n");
     text_slow(texto);
     printf("\n");
@@ -25,7 +25,7 @@ int main()
     verb(next->str);
     //printf("%d", next->verb);
     random_room();
-    next->map[1][1] = 1;
+    next->map[4][1] = 1;
     printf("%d\n", next->map[0][1]);
     deploy_room();
     SDL_Quit();

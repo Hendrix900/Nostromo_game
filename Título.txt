@@ -2,6 +2,19 @@ Nave minera 3459509JK-LI
 Origen: Amaltea 
 Destino: Tierra
 Día: 4578
+Carga: 54469t
 Pasajeros: 5
-Estado: ........................................................................Alarma 565b
-Descriogénesis activada...
+Estado: 
+
+Rumbo.......................................ok
+Comunicaciones..............................Error
+Sistemas....................................Error
+Flujo de energía de motor...................Error
+Estado motor N1.............................Error
+Carga.......................................ok
+Cápsula de hibernación 1....................Error
+Cápsula de hibernación 2....................abierta
+Cápsula de hibernación 3....................ok
+Cápsula de hibernación 4....................abierta
+Cápsula de hibernación 5....................ok
+Abriendo capsula 5...........

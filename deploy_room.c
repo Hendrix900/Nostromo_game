@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 02:31:31 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/25 14:26:37 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/27 06:43:23 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,15 @@ void		throug_array()
         {
               while (y < 3)
             {
-                if (map_copy[x][y] == 1)
+                if(map_copy[x][y] == 1)
+					next->map[x - 1][y] = 1;
+				if (map_copy[x][y] == 1 && map_copy[1][0] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] || 
+					map_copy[x][y] == 1 && map_copy[1][2] == map_copy[x][y])
 				{
-                    next->map[x - 1][y] = 1;
-						//if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[0][0] || map_copy[x][y] == map_copy[0][2])				
-						
-				}
-
-                      
+					printf("No hay salida\n");
+					next->map[x][y] = 1;
+				}   
               y++;
             }
         
@@ -79,16 +80,16 @@ void		throug_array()
         {
               while (y < 3)
             {
-                if (map_copy[x][y] == 1)
-                      next->map[x + 1][y] = 1;
-					  	if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[4][0] || map_copy[x][y] == map_copy[4][2])
-						{
-							x = 5;
-							y = 3;
-							printf ("No hay camino");
-							break;
-						}
-              y++;
+             	if(map_copy[x][y] == 1)
+					next->map[x + 1][y] = 1;
+				if (map_copy[x][y] == 1 && map_copy[3][0] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[4][1] == map_copy[x][y] || 
+					map_copy[x][y] == 1 && map_copy[3][2] == map_copy[x][y])
+				{
+					printf("No hay salida\n");
+					next->map[x][y] = 1;
+				}
+            y++;
             }
         
           y = 0;
@@ -104,15 +105,17 @@ void		throug_array()
         {
               while (y < 3)
             {
-                if (map_copy[x][y] == 1)
-                      next->map[x][y + 1] = 1;
-					  		if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[0][2] || map_copy[x][y] == map_copy[4][2])
-						{
-							x = 5;
-							y = 3;
-							printf ("No hay camino");
-							break;
-						}
+               if(map_copy[x][y] == 1)
+					next->map[x][y + 1] = 1;
+				if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[1][2] == map_copy[x][y] || 
+					map_copy[x][y] == 1 && map_copy[2][2] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[3][2] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[4][1] == map_copy[x][y])
+				{
+					printf("No hay salida\n");
+					next->map[x][y] = 1;
+				}   
               y++;
             }
         
@@ -129,15 +132,17 @@ void		throug_array()
         {
               while (y < 3)
             {
-                if (map_copy[x][y] == 1)
-                      next->map[x][y - 1] = 1;
-					  		if (map_copy[x][y] == map_copy['\0']['\0'] || map_copy[x][y] == map_copy[0][0] || map_copy[x][y] == map_copy[4][0])
-						{
-							x = 5;
-							y = 3;
-							printf ("No hay camino");
-							break;
-						}
+                if(map_copy[x][y] == 1)
+					next->map[x][y - 1] = 1;
+				if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[1][0] == map_copy[x][y] || 
+					map_copy[x][y] == 1 && map_copy[2][0] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[3][0] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[4][1] == map_copy[x][y])
+				{
+					printf("No hay salida\n");
+					next->map[x][y] = 1;
+				}   
               y++;
             }
         
@@ -149,7 +154,7 @@ void		throug_array()
 
 void	deploy_room()
 {
-
+	throug_array();
  /*--------------------Room [0][1]--------------------------------*/
 	if	(next->matrix[0][1] == 1 && next->map[0][1] == 1)
 		printf("Room1\n");
@@ -267,25 +272,6 @@ void	deploy_room()
 		printf("Room8\n");
 	else if	(next->matrix[2][2] == 9 && next->map[2][2] == 1)
 		printf("Room9\n");
-  /*--------------------Room [2][2]--------------------------------*/
-	if	(next->matrix[2][2] == 1 && next->map[2][2] == 1)
-		printf("Room1\n");
-	else if	(next->matrix[2][2] == 2 && next->map[2][2] == 1)
-		printf("Room2\n");
-	else if	(next->matrix[2][2] == 3 && next->map[2][2] == 1)
-		printf("Room3\n");
-	else if	(next->matrix[2][2] == 4 && next->map[2][2] == 1)
-		printf("Room4\n");
-	else if	(next->matrix[2][2] == 5 && next->map[2][2] == 1)
-		printf("Room5\n");
-	else if	(next->matrix[2][2] == 6 && next->map[2][2] == 1)
-		printf("Room6\n");
-	else if	(next->matrix[2][2] == 7 && next->map[2][2] == 1)
-		printf("Room7\n");
-	else if	(next->matrix[2][2] == 8 && next->map[2][2] == 1)
-		printf("Room8\n");
-	else if	(next->matrix[2][2] == 9 && next->map[2][2] == 1)
-		printf("Room9\n");
     /*--------------------Room [3][0]--------------------------------*/
 	if	(next->matrix[3][0] == 1 && next->map[3][0] == 1)
 		printf("Room1\n");
@@ -364,7 +350,7 @@ void	deploy_room()
 		printf("Room9\n");
 }
 
-/*int main ()
+int main ()
 {
 	int l;
 
@@ -372,13 +358,13 @@ void	deploy_room()
 
 	if (!(next = malloc(sizeof(t_list))))
 		return (0);
-	next->verb = 'o';
+	next->verb = 's';
 	next->map[1][1] = 1;
 	random_room();
 	deploy_room();
 	
-	printf("El número aleatorio de la matrix es : %d\n", next->matrix[0][1]);
-	printf("La posición del jugador es: %d\n",next->map[1][0]);
+	printf("El número aleatorio de la matrix es : %d\n", next->matrix[2][1]);
+	printf("La posición del jugador es: %d\n",next->map[2][1]);
+	
 
 }
-*/

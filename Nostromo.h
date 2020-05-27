@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/25 23:58:47 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/26 00:51:43 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,6 @@ void        random_room();
 void	deploy_room();
 int	open_text();
 void ft_putchar(char c);
-
-
-
-
 static char    *texto = "Despiertas en una habitación destartalada\nHay un ordenador encendido y varias habitaciones colindantes\n";
 static char    *texto2 = "El ordenador indica que el motor N1 se ha detenido\n";
 
