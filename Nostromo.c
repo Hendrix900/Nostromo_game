@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:20 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/27 05:32:07 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/27 06:47:58 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main()
     fgets(next->str, TAM_MAX, stdin);
     verb(next->str);
     //printf("%d", next->verb);
-    random_room();
     next->map[4][1] = 1;
     printf("%d\n", next->map[0][1]);
     deploy_room();

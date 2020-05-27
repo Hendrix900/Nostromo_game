@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 02:31:31 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/27 06:43:23 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/27 10:18:11 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,7 +310,7 @@ void	deploy_room()
 		printf("Room8\n");
 	else if	(next->matrix[3][1] == 9 && next->map[3][1] == 1)
 		printf("Room9\n");
-    /*--------------------Room [3][1]--------------------------------*/
+    /*--------------------Room [3][2]--------------------------------*/
 	if	(next->matrix[3][2] == 1 && next->map[3][2] == 1)
 		printf("Room1\n");
 	else if	(next->matrix[3][2] == 2 && next->map[3][2] == 1)
@@ -349,7 +349,7 @@ void	deploy_room()
 	else if	(next->matrix[4][1] == 9 && next->map[4][1] == 1)
 		printf("Room9\n");
 }
-
+/*
 int main ()
 {
 	int l;
@@ -368,3 +368,4 @@ int main ()
 	
 
 }
+*/
