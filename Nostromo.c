@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Nostromo.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:20 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/27 06:47:58 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/29 01:50:30 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@ int main()
     if (!(next = malloc(sizeof(t_list))))
 		return (0);
     music();
-  //  open_text(); // Título
+    next->map[1][1] = 1;
+    //open_text(); // Título
     printf("\n");
     text_slow(texto);
     printf("\n");
+    random_room();
     fgets(next->str, TAM_MAX, stdin);
     verb(next->str);
-    //printf("%d", next->verb);
-    next->map[4][1] = 1;
-    printf("%d\n", next->map[0][1]);
     deploy_room();
     SDL_Quit();
     return (0);

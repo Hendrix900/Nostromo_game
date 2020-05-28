@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Nostromo.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/26 00:51:43 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/29 01:34:05 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
+
 //Ruta de la música
 #define MUS_PATH "./bsoalien.wav"
 
@@ -51,8 +52,19 @@ static Uint8 *audio_pos;
 static Uint32 audio_len;
 
 void ft_objects(char *str, char v);
+
 void Room_0();
 void Room_1();
+void Room_2();
+void Room_3();
+void Room_4();
+void Room_5();
+void Room_6();
+void Room_7();
+void Room_8();
+void Room_9();
+void Room_10();
+
 void *music();
 void text_slow(char *str);
 void text_slow1(char *str);
@@ -61,6 +73,7 @@ void        random_room();
 void	deploy_room();
 int	open_text();
 void ft_putchar(char c);
+int	corridor();
 static char    *texto = "Despiertas en una habitación destartalada\nHay un ordenador encendido y varias habitaciones colindantes\n";
 static char    *texto2 = "El ordenador indica que el motor N1 se ha detenido\n";
 

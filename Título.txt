@@ -9,7 +9,7 @@ Estado:
 Rumbo.......................................ok
 Comunicaciones..............................Error
 Sistemas....................................Error
-Flujo de energía de motor...................Error
+Flujo de energía del motor..................Error
 Estado motor N1.............................Error
 Carga.......................................ok
 Cápsula de hibernación 1....................Error

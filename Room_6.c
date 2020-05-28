@@ -3,12 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Room_6.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 10:15:48 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/27 10:15:53 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/29 01:38:15 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Nostromo.h"
 
+void Room_6()
+{
+	corridor();
+	
+	printf("Estás en la Room_1\n");
+
+
+
+
+}
