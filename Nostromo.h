@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/29 01:34:05 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 04:04:51 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,20 @@ typedef struct		s_list_printf
 {
 	int				verb; // verbo
 	int				object; // Objeto
+	
 	int		        random_room_generator[10]; //Cadena donde se almacenan números aleatorios
 	int				matrix[5][3]; // Cadena que alberga los números aleatoriso almacenados por habitaciones.
 	int				map[5][3]; // Indicará la posición del jugador en cada momento.
 	char			str[TAM_MAX];
+	
+	char			difficulty[1];// Número que muestra la dificultad 1, 2 o 3. Fácil, Normal, Dificil
+	int				number_enemies;
+	int				enemy_lives;
+	int				player_lives;
+	int				
+
+	
+	
 }					t_list;
 
 t_list *next;
@@ -74,6 +84,7 @@ void	deploy_room();
 int	open_text();
 void ft_putchar(char c);
 int	corridor();
+void		difficulty();
 static char    *texto = "Despiertas en una habitación destartalada\nHay un ordenador encendido y varias habitaciones colindantes\n";
 static char    *texto2 = "El ordenador indica que el motor N1 se ha detenido\n";
 
