@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:24 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/29 01:49:11 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 06:56:17 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void Room_0()
 {
-	corridor();
+
+	//corridor();
 	
 	printf("Estás en la Room_0\n");
-
-
-
+	fgets(next->str, TAM_MAX, stdin);
+    verb(next->str);
+    deploy_room();
 
 }

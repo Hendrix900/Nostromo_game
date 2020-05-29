@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verb.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 05:10:07 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/25 12:42:49 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/29 05:40:59 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int		verb(char *str) // CAmbiado de int a void
 	 	next->verb = 'l';
 	else 
 		next->verb = 0;
+
 	return (0);
 		
 }

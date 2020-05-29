@@ -6,13 +6,11 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 00:04:41 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/29 01:50:22 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 06:54:36 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Nostromo.h"
-
-int	corridor();
 
 int	corridor()
 {

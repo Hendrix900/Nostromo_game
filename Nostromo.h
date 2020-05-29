@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/29 04:04:51 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 05:23:30 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,11 @@ typedef struct		s_list_printf
 	int				map[5][3]; // Indicará la posición del jugador en cada momento.
 	char			str[TAM_MAX];
 	
-	char			difficulty[1];// Número que muestra la dificultad 1, 2 o 3. Fácil, Normal, Dificil
+	char			difficulty[sizeof(char)];// Número que muestra la dificultad 1, 2 o 3. Fácil, Normal, Dificil
 	int				number_enemies;
 	int				enemy_lives;
 	int				player_lives;
-	int				
 
-	
-	
 }					t_list;
 
 t_list *next;

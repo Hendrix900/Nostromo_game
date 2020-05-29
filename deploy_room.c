@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 02:31:31 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/29 01:32:06 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 06:47:39 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,15 @@ void		throug_array()
         {
               while (y < 3)
             {
-                if(map_copy[x][y] == 1)
-					next->map[x - 1][y] = 1;
-				if (map_copy[x][y] == 1 && map_copy[1][0] == map_copy[x][y] ||
-					map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] || 
+               if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
+					map_copy[x][y] == 1 && map_copy[1][0] == map_copy[x][y] || 
 					map_copy[x][y] == 1 && map_copy[1][2] == map_copy[x][y])
 				{
 					printf("No hay salida\n");
 					next->map[x][y] = 1;
-				}   
+				}
+				else if(map_copy[x][y] == 1)
+					next->map[x - 1][y] = 1;
               y++;
             }
         
@@ -80,15 +80,15 @@ void		throug_array()
         {
               while (y < 3)
             {
-             	if(map_copy[x][y] == 1)
-					next->map[x + 1][y] = 1;
-				if (map_copy[x][y] == 1 && map_copy[3][0] == map_copy[x][y] ||
+            	if (map_copy[x][y] == 1 && map_copy[3][0] == map_copy[x][y] ||
 					map_copy[x][y] == 1 && map_copy[4][1] == map_copy[x][y] || 
 					map_copy[x][y] == 1 && map_copy[3][2] == map_copy[x][y])
 				{
 					printf("No hay salida\n");
 					next->map[x][y] = 1;
 				}
+				else if(map_copy[x][y] == 1)
+					next->map[x + 1][y] = 1;
             y++;
             }
         
@@ -105,9 +105,7 @@ void		throug_array()
         {
               while (y < 3)
             {
-               if(map_copy[x][y] == 1)
-					next->map[x][y + 1] = 1;
-				if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
+             	if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
 					map_copy[x][y] == 1 && map_copy[1][2] == map_copy[x][y] || 
 					map_copy[x][y] == 1 && map_copy[2][2] == map_copy[x][y] ||
 					map_copy[x][y] == 1 && map_copy[3][2] == map_copy[x][y] ||
@@ -115,7 +113,9 @@ void		throug_array()
 				{
 					printf("No hay salida\n");
 					next->map[x][y] = 1;
-				}   
+				}
+				else if(map_copy[x][y] == 1)
+					next->map[x][y + 1] = 1;  
               y++;
             }
         
@@ -132,9 +132,7 @@ void		throug_array()
         {
               while (y < 3)
             {
-                if(map_copy[x][y] == 1)
-					next->map[x][y - 1] = 1;
-				if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
+                if (map_copy[x][y] == 1 && map_copy[0][1] == map_copy[x][y] ||
 					map_copy[x][y] == 1 && map_copy[1][0] == map_copy[x][y] || 
 					map_copy[x][y] == 1 && map_copy[2][0] == map_copy[x][y] ||
 					map_copy[x][y] == 1 && map_copy[3][0] == map_copy[x][y] ||
@@ -142,7 +140,9 @@ void		throug_array()
 				{
 					printf("No hay salida\n");
 					next->map[x][y] = 1;
-				}   
+				}
+				else if (map_copy[x][y] == 1)
+					next->map[x][y - 1] = 1;
               y++;
             }
         
@@ -174,6 +174,8 @@ void	deploy_room()
 		Room_8();
 	else if	(next->matrix[0][1] == 9 && next->map[0][1] == 1)
 		Room_9();
+	else if	(next->matrix[0][1] == 10 && next->map[0][1] == 1)
+		Room_10();
  /*--------------------Room [1][0]--------------------------------*/
 	if	(next->matrix[1][0] == 1 && next->map[1][0] == 1)
 		Room_1();
@@ -184,15 +186,17 @@ void	deploy_room()
 	else if	(next->matrix[1][0] == 4 && next->map[1][0] == 1)
 		Room_4();
 	else if	(next->matrix[1][0] == 5 && next->map[1][0] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[1][0] == 6 && next->map[1][0] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[1][0] == 7 && next->map[1][0] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[1][0] == 8 && next->map[1][0] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[1][0] == 9 && next->map[1][0] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[1][0] == 10 && next->map[1][0] == 1)
+		Room_10();
   /*--------------------Room [1][1]--------------------------------*/
 	if	(next->matrix[1][1] == 1 && next->map[1][1] == 1)
 		Room_1();
@@ -203,15 +207,17 @@ void	deploy_room()
 	else if	(next->matrix[1][1] == 4 && next->map[1][1] == 1)
 		Room_4();
 	else if	(next->matrix[1][1] == 5 && next->map[1][1] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[1][1] == 6 && next->map[1][1] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[1][1] == 7 && next->map[1][1] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[1][1] == 8 && next->map[1][1] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[1][1] == 9 && next->map[1][1] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[1][1] == 10 && next->map[1][1] == 1)
+		Room_10();
   /*--------------------Room [1][2]--------------------------------*/
 	if	(next->matrix[1][2] == 1 && next->map[1][2] == 1)
 		Room_1();
@@ -222,15 +228,17 @@ void	deploy_room()
 	else if	(next->matrix[1][2] == 4 && next->map[1][2] == 1)
 		Room_4();
 	else if	(next->matrix[1][2] == 5 && next->map[1][2] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[1][2] == 6 && next->map[1][2] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[1][2] == 7 && next->map[1][2] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[1][2] == 8 && next->map[1][2] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[1][2] == 9 && next->map[1][2] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[1][2] == 10 && next->map[1][2] == 1)
+		Room_10();
   /*--------------------Room [2][0]--------------------------------*/
 	if	(next->matrix[2][0] == 1 && next->map[2][0] == 1)
 		Room_1();
@@ -241,18 +249,20 @@ void	deploy_room()
 	else if	(next->matrix[2][0] == 4 && next->map[2][0] == 1)
 		Room_4();
 	else if	(next->matrix[2][0] == 5 && next->map[2][0] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[2][0] == 6 && next->map[2][0] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[2][0] == 7 && next->map[2][0] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[2][0] == 8 && next->map[2][0] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[2][0] == 9 && next->map[2][0] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[2][0] == 10 && next->map[2][0] == 1)
+		Room_10();
   /*--------------------Room [2][1]--------------------------------*/
 	if	(next->matrix[2][1] == 0 && next->map[2][1] == 1)
-		printf("Room0\n");
+		Room_0();
   /*--------------------Room [2][2]--------------------------------*/
 	if	(next->matrix[2][2] == 1 && next->map[2][2] == 1)
 		Room_1();
@@ -261,17 +271,19 @@ void	deploy_room()
 	else if	(next->matrix[2][2] == 3 && next->map[2][2] == 1)
 		Room_3();
 	else if	(next->matrix[2][2] == 4 && next->map[2][2] == 1)
-		printf("Room4\n");
+		Room_4();
 	else if	(next->matrix[2][2] == 5 && next->map[2][2] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[2][2] == 6 && next->map[2][2] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[2][2] == 7 && next->map[2][2] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[2][2] == 8 && next->map[2][2] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[2][2] == 9 && next->map[2][2] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[2][2] == 10 && next->map[2][2] == 1)
+		Room_10();
     /*--------------------Room [3][0]--------------------------------*/
 	if	(next->matrix[3][0] == 1 && next->map[3][0] == 1)
 		Room_1();
@@ -280,17 +292,19 @@ void	deploy_room()
 	else if	(next->matrix[3][0] == 3 && next->map[3][0] == 1)
 		Room_3();
 	else if	(next->matrix[3][0] == 4 && next->map[3][0] == 1)
-		printf("Room4\n");
+		Room_4();
 	else if	(next->matrix[3][0] == 5 && next->map[3][0] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[3][0] == 6 && next->map[3][0] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[3][0] == 7 && next->map[3][0] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[3][0] == 8 && next->map[3][0] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[3][0] == 9 && next->map[3][0] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[3][0] == 10 && next->map[3][0] == 1)
+		Room_10();
   /*--------------------Room [3][1]--------------------------------*/
 	if	(next->matrix[3][1] == 1 && next->map[3][1] == 1)
 		Room_1();
@@ -299,17 +313,19 @@ void	deploy_room()
 	else if	(next->matrix[3][1] == 3 && next->map[3][1] == 1)
 		Room_3();
 	else if	(next->matrix[3][1] == 4 && next->map[3][1] == 1)
-		printf("Room4\n");
+		Room_4();
 	else if	(next->matrix[3][1] == 5 && next->map[3][1] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[3][1] == 6 && next->map[3][1] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[3][1] == 7 && next->map[3][1] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[3][1] == 8 && next->map[3][1] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[3][1] == 9 && next->map[3][1] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[3][1] == 10 && next->map[3][1] == 1)
+		Room_10();
     /*--------------------Room [3][2]--------------------------------*/
 	if	(next->matrix[3][2] == 1 && next->map[3][2] == 1)
 		Room_1();
@@ -318,17 +334,19 @@ void	deploy_room()
 	else if	(next->matrix[3][2] == 3 && next->map[3][2] == 1)
 		Room_3();
 	else if	(next->matrix[3][2] == 4 && next->map[3][2] == 1)
-		printf("Room4\n");
+		Room_4();
 	else if	(next->matrix[3][2] == 5 && next->map[3][2] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[3][2] == 6 && next->map[3][2] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[3][2] == 7 && next->map[3][2] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[3][2] == 8 && next->map[3][2] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[3][2] == 9 && next->map[3][2] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[3][2] == 10 && next->map[3][2] == 1)
+		Room_10();
     /*--------------------Room [4][1]--------------------------------*/
 	if	(next->matrix[4][1] == 1 && next->map[4][1] == 1)
 		Room_1();
@@ -337,20 +355,22 @@ void	deploy_room()
 	else if	(next->matrix[4][1] == 3 && next->map[4][1] == 1)
 		Room_3();
 	else if	(next->matrix[4][1] == 4 && next->map[4][1] == 1)
-		printf("Room4\n");
+		Room_4();
 	else if	(next->matrix[4][1] == 5 && next->map[4][1] == 1)
-		printf("Room5\n");
+		Room_5();
 	else if	(next->matrix[4][1] == 6 && next->map[4][1] == 1)
-		printf("Room6\n");
+		Room_6();
 	else if	(next->matrix[4][1] == 7 && next->map[4][1] == 1)
-		printf("Room7\n");
+		Room_7();
 	else if	(next->matrix[4][1] == 8 && next->map[4][1] == 1)
-		printf("Room8\n");
+		Room_8();
 	else if	(next->matrix[4][1] == 9 && next->map[4][1] == 1)
-		printf("Room9\n");
+		Room_9();
+	else if	(next->matrix[4][1] == 10 && next->map[4][1] == 1)
+		Room_10();
 }
-/*
-int main ()
+
+/*int main ()
 {
 	int l;
 
@@ -358,8 +378,8 @@ int main ()
 
 	if (!(next = malloc(sizeof(t_list))))
 		return (0);
-	next->verb = 's';
-	next->map[1][1] = 1;
+	next->verb = 'n';
+	next->map[2][1] = 1;
 	random_room();
 	deploy_room();
 	

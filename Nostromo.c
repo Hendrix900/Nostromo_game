@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:20 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/29 04:00:51 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 06:31:00 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@ int main()
     if (!(next = malloc(sizeof(t_list))))
 		return (0);
     difficulty();
+    random_room();
     music();
-    next->map[1][1] = 1;
+    next->map[2][1] = 1;
     //open_text(); // Título
     printf("\n");
-    printf("%s\n",next->difficulty);
-    printf("%i\n",next->number_enemies);
-    printf("%i\n",next->enemy_lives);
-    printf("%i\n",next->player_lives);
     text_slow(texto);
     printf("\n");
-    random_room();
     fgets(next->str, TAM_MAX, stdin);
     verb(next->str);
     deploy_room();
