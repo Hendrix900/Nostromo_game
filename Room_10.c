@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/27 10:16:19 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/29 01:38:24 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 02:30:22 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void Room_10()
 {
 	corridor();
 	
-	printf("Estás en la Room_1\n");
+	printf("Estás en la Room_10\n");
 
 
 
