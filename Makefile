@@ -6,7 +6,7 @@
 #    By: ccastill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/24 03:56:22 by ccastill          #+#    #+#              #
-#    Updated: 2020/05/29 02:46:18 by ccastill         ###   ########.fr        #
+#    Updated: 2020/05/31 14:35:21 by ccastill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,9 @@ OBJS_PRINTF = Nostromo.o Room_0.o Room_1.o Room_2.o Room_3.o Room_4.o Room_5.o R
 
 WAV_FILES = Nostromo.wav
 
-#FUN_LIBFT = ./libft/ft_atoi.c ./libft/ft_substr.c ./libft/ft_strlen.c ./libft/ft_putchar_fd.c \	
-
-#OBJS_LIBFT = ./libft/ft_atoi.o ./libft/ft_substr.o ./libft/ft_strlen.o ./libft/ft_putchar_fd.o \
-
 CFLAGS = -c -lSDL -lSDL2 -lSDL2_mixer -g 
 
-all: $(NAME) # Regla principal. Al ejecutar Make se ejecutará.
+all: $(NAME)
 
 $(NAME): $(OBJS_PRINTF) $(OBJS_LIBFT) Nostromo.h 
 	@gcc $(CFLAGS) $(FUN_PRINTF) $(FUN_LIBFT) 

@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 02:34:38 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/29 05:24:02 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 07:01:22 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		difficulty()
 {
 	system("clear");
-	printf("Escoja dificultad insertando un número\n1 - Fácil\n2 - Normal\n3 - Dificil\n\n");
+	printf("Seleccione la dificultad\n1 - Fácil\n2 - Normal\n3 - Dificil\n\n");
 	while (next->difficulty[0] != '1' && next->difficulty[0] != '2' && next->difficulty[0] != '3')
 	{
 		fgets(next->difficulty, 5, stdin);
