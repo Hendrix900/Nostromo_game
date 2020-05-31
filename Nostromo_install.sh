@@ -4,7 +4,7 @@ if [ -d ./Nostromo_game ]; then # si la carpeta existe entra en ella
 	cd ./Nostromo_game/
 else # si la carpeta no existe la descarga
 	echo "Downloading Nostromo game"
-	if git clone https://github.com/Antogor/Nostromo_game.git &> Download.log; then
+	if git clone https://github.com/Hendrix900/Nostromo_game.git &> Download.log; then
 		echo "Game Downloaded"
 		cd ./Nostromo_game/
 	else
