@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   text_slow.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 02:00:07 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/26 01:43:14 by carlos           ###   ########.fr       */
+/*   Updated: 2020/05/27 22:16:02 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void text_slow(char *str)
 }
 void ft_putchar(char c)
 	{
-		write(1, &c, 1);
+		write (1, &c, 1);
 	}
