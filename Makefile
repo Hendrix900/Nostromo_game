@@ -13,10 +13,16 @@
 
 NAME = Nostromo
 
+LIB = Nostromo_lib.a
+
 # Instalación de la biblioteca SDL2
-SDL2_INST = libsdl2-dev libsdl2-2.0-0 libjpeg-dev libwebp-dev libtiff5-dev libsdl2-image-dev libsdl2-image-2.0-0libmikmod-dev \
-			libfishsound1-dev libsmpeg-dev liboggz2-dev libflac-dev libfluidsynth-dev libsdl2-mixer-dev libsdl2-mixer-2.0-0 \
-			libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0
+SDL2 = libsdl2-dev libsdl2-2.0-0 
+
+SDL_IMG = libjpeg-dev libwebp-dev libtiff5-dev libsdl2-image-dev libsdl2-image-2.0-0
+
+SDL_MIXER = libmikmod-dev libfishsound1-dev libsmpeg-dev liboggz2-dev libflac-dev libfluidsynth-dev libsdl2-mixer-dev libsdl2-mixer-2.0-0
+
+FONTS = libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0
 
 SRC = Nostromo.c Room_0.c Room_1.c Room_2.c Room_3.c Room_4.c Room_5.c Room_6.c Room_7.c Room_8.c Room_9.c Room_10.c \
 			text_slow.c text_slow1.c music.c verb.c deploy_room.c random_room.c open_text.c corridor.c difficulty.c \
@@ -33,24 +39,28 @@ WAV_FILES = Nostromo.wav
 
 #OBJS_LIBFT = ./libft/ft_atoi.o ./libft/ft_substr.o ./libft/ft_strlen.o ./libft/ft_putchar_fd.o \
 
-CFLAGS = -c -lSDL -lSDL2 -lSDL2_mixer -g 
+CFLAGS = -c
+
+SDL2_FLAGS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
 
 all: $(NAME) # Regla principal. Al ejecutar Make se ejecutará.
 
-install:
-	@$(shell sudo apt-get install -y $(SDL2_INST))
+install: # Regla para instalar SDL2
+	@sudo apt-get install -y $(SDL2) $(SDL_IMG) $(SDL_MIXER) $(FONTS)
+	@sdl2-config --cflags --libs
 
-$(NAME): $(OBJS) Nostromo.h
-	@gcc $(CFLAGS) $(SRC) -o $(NAME) #con -o NAME le hacemos que gcc cree un ejecutable del mismo nombre indicado. De esta manera nos ahorramos la terminacion .a \
-										que por lo visto es tipica de binraios en los que contienen librerias.
-	#Nos ahorrariamos estas instrucciones
-#	@ar rc $(NAME) $(OBJS)
-#	@ranlib $(NAME) 
+$(LIB): $(OBJS) Nostromo.h # Regla para crear el binario con las librerias SDL2
+	@gcc $(CFLAGS) $(SRC)
+	@ar rc $(LIB) $(OBJS)
+	@ranlib $(LIB) 
+
+$(NAME): $(LIB) # Regla para general el ejecutabl del juego
+	@gcc $(LIB) $(SDL2_FLAGS) -o $(NAME)
 
 clean:
 	@rm -f $(OBJS_PRINTF) $(OBJS_LIBFT) *.o
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(LIB)
 
 re: fclean all
