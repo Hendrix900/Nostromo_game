@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 05:10:07 by ccastill          #+#    #+#             */
-/*   Updated: 2020/05/29 05:40:59 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/05/29 07:54:06 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int        compare_verb(char *str, char *word)
   return (0);
 }
 
-int		verb(char *str) // CAmbiado de int a void
+int		verb(char *str) // Cambiado de int a void
 {
 	/*--------Verbos-----*/
  	if (compare_verb(str, "norte\n") == 1)
