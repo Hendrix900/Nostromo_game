@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:20 by carlos            #+#    #+#             */
-/*   Updated: 2020/06/01 06:58:31 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/06/01 07:29:55 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     random_room();
     music_mix();
     next->map[2][1] = 1;
-    //open_text(); // Título
+    open_text(); // Título
     printf("\n");
     text_slow(texto);
     printf("\n");

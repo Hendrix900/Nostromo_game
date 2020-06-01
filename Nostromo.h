@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/06/01 07:00:58 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/06/01 07:12:51 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@
 #define ANSI_COLOR_MAGENTA "\x1b[35m"
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
-
-//Ruta de la música
-#define MUS_PATH "./bsoalien.wav"
 
 typedef struct		s_list_printf
 {

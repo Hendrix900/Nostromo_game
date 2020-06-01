@@ -6,7 +6,7 @@
 #    By: ccastill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/24 03:56:22 by ccastill          #+#    #+#              #
-#    Updated: 2020/06/01 07:05:45 by ccastill         ###   ########.fr        #
+#    Updated: 2020/06/01 07:10:51 by ccastill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,6 @@ SRC = Nostromo.c Room_0.c Room_1.c Room_2.c Room_3.c Room_4.c Room_5.c Room_6.c 
 
 OBJS = $(SRC:.c=.o) #Esto es lo mismo que la variable de arriba OBJS_PRINTF. Le dices a make que la variable OBJ es igual a todos los archivos de SRC \
 			#		y que cambia todos los .c de esos nombres a .o. De esta manera añadiendo solo las funciones a SRC las tendriamos en OBJS con extension .o
-
-WAV_FILES = Nostromo.wav
 
 CFLAGS = -c
 
