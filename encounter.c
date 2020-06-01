@@ -31,7 +31,5 @@ void	encounter()
 		 
 	}
 
-
-	
 	
 }

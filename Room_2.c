@@ -20,5 +20,4 @@ void Room_2()
 	fgets(next->str, TAM_MAX, stdin);
     verb(next->str);
     deploy_room();
-
 }
