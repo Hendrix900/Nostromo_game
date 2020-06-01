@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/31 14:47:57 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/06/01 07:12:51 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <stdarg.h>
 #include <fcntl.h>
 #include <SDL2/SDL.h>
-//#include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_mixer.h>
 
 #define TAM_MAX 50 //Quitar
 
@@ -32,10 +32,6 @@
 #define ANSI_COLOR_MAGENTA "\x1b[35m"
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
-
-
-//Ruta de la música
-#define MUS_PATH "./bsoalien.wav"
 
 typedef struct		s_list_printf
 {
@@ -56,6 +52,7 @@ typedef struct		s_list_printf
 }					t_list;
 
 t_list *next;
+
 static Uint8 *audio_pos;
 static Uint32 audio_len;
 
@@ -81,9 +78,9 @@ int			open_text();
 void 		ft_putchar(char c);
 int			corridor();
 void		difficulty();
+void	music_mix();
+	
 void 		ft_objects(char *str, char v); //Sin utilizar
-
-
 
 static char    *texto = "Despiertas en una habitación destartalada\nHay un ordenador encendido y varias habitaciones colindantes\n";
 static char    *texto2 = "El ordenador indica que el motor N1 se ha detenido\n";
