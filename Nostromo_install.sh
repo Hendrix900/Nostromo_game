@@ -23,11 +23,12 @@ fi
 
 echo "Installing Nostromo"
 if make re &> ../Installation.log; then # Dentro de la carpeta hace el make
-	mv Nostromo ../
 	echo "Installation successful"
 	echo "See 'Installation.log' to see more details"
 else # En caso de que falle sale del script, en el .log pondran los errores
 	echo "Installation failed"
 	echo "See 'Installation.log' to see more details"
 	exit 1
-fi	
+fi
+
+echo "Enter to ./Nostomo_game/ and execute ./Nostromo to enjoy the game"
