@@ -1,6 +1,0 @@
-E: Unable to locate package libsdl2-image-2.0-0libmikmod-dev
-E: Couldn't find any package by glob 'libsdl2-image-2.0-0libmikmod-dev'
-E: Couldn't find any package by regex 'libsdl2-image-2.0-0libmikmod-dev'
-make: Reading: Command not found
-Makefile:41: recipe for target 'install' failed
-make: *** [install] Error 127

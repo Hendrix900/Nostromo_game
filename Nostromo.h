@@ -6,7 +6,7 @@
 /*   By: ccastill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:05:09 by carlos            #+#    #+#             */
-/*   Updated: 2020/05/29 05:23:30 by ccastill         ###   ########.fr       */
+/*   Updated: 2020/06/01 07:12:51 by ccastill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
-
-//Ruta de la música
-#define MUS_PATH "./bsoalien.wav"
-
 typedef struct		s_list_printf
 {
 	int				verb; // verbo
@@ -48,17 +44,17 @@ typedef struct		s_list_printf
 	char			str[TAM_MAX];
 	
 	char			difficulty[sizeof(char)];// Número que muestra la dificultad 1, 2 o 3. Fácil, Normal, Dificil
-	int				number_enemies;
-	int				enemy_lives;
-	int				player_lives;
+	int				number_enemies; // EL número total de enemigos
+	int				enemy_lives; // Las vidas de cada enemigo
+	int				player_lives; // Vidas/golpes que puede recibir el jugador
+	int				movment; // Número que se incrementa con cada habitación abierta y que aumenta la probabilidad de encuentro.
 
 }					t_list;
 
 t_list *next;
+
 static Uint8 *audio_pos;
 static Uint32 audio_len;
-
-void ft_objects(char *str, char v);
 
 void Room_0();
 void Room_1();
@@ -72,16 +68,20 @@ void Room_8();
 void Room_9();
 void Room_10();
 
-void *music();
-void text_slow(char *str);
-void text_slow1(char *str);
-int		verb(char *str);
+void 		*music();
+void 		text_slow(char *str);
+void 		text_slow1(char *str);
+int			verb(char *str);
 void        random_room();
-void	deploy_room();
-int	open_text();
-void ft_putchar(char c);
-int	corridor();
+void		deploy_room();
+int			open_text();
+void 		ft_putchar(char c);
+int			corridor();
 void		difficulty();
+void	music_mix();
+	
+void 		ft_objects(char *str, char v); //Sin utilizar
+
 static char    *texto = "Despiertas en una habitación destartalada\nHay un ordenador encendido y varias habitaciones colindantes\n";
 static char    *texto2 = "El ordenador indica que el motor N1 se ha detenido\n";
 
